@@ -7,16 +7,25 @@ class Television:
     MAX_CHANNEL = 3
 
     def __init__(self):
-        self.status = False
-        self.muted = False 
-        self.volume = self.MIN_VOLUME
-        self.channel = self.MIN_CHANNEL
+        self.__status = False
+        self.__muted = False 
+        self.__volume = self.MIN_VOLUME
+        self.__channel = self.MIN_CHANNEL
 
     def power(self):
-        pass
+        if self.__status:
+            self.__status = False
+        else:
+            self.__status = True
 
     def mute(self):
-        pass
+        if self.__muted and self.__status:
+            self.__muted = False
+        elif not(self.__muted) and self.__status:
+            self.__muted = True
+        else:
+            #turn that hoe on
+            pass      
 
     def channel_up(self):
         pass
