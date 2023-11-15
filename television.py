@@ -20,10 +20,8 @@ class Television:
     def mute(self):
         if self.__muted and self.__status:
             self.__muted = False
-            self.__volume
         elif not(self.__muted) and self.__status:
             self.__muted = True
-            self.__volume = self.MIN_VOLUME
         else:
             #turn that hoe on
             pass      
