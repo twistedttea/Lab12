@@ -1,6 +1,5 @@
 #jalen been here ong
 class Television:
-    #please use yoda like conditionals as to not change the constants...
     MIN_VOLUME = 0
     MAX_VOLUME = 2
     MIN_CHANNEL = 0
@@ -34,10 +33,26 @@ class Television:
         pass
 
     def volume_up(self):
-        pass
+        if self.__status:
+            if self.__muted:
+                self.__muted = False
+            if self.MAX_VOLUME == self.__volume:
+                pass
+            else: 
+                self.__volume += 1
+        else:
+            pass
 
     def volume_down(self):
-        pass
+        if self.__status:
+            if self.__muted:
+                self.__muted = False
+            if self.MIN_VOLUME == self.__volume:
+                pass
+            else: 
+                self.__volume -= 1
+        else:
+            pass
 
     def __str__(self):
         pass
