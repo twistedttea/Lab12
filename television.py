@@ -18,20 +18,25 @@ class Television:
             self.__status = True
 
     def mute(self):
-        if self.__muted and self.__status:
-            self.__muted = False
-        elif not(self.__muted) and self.__status:
-            self.__muted = True
-        else:
-            #turn that hoe on
-            pass      
+        if self.__status:
+            if self.__muted: 
+                self.__muted = False
+            else:
+                self.__muted = True
 
     def channel_up(self):
-        pass
+        if self.__status:
+            if self.__channel == self.MAX_CHANNEL:
+                self.__channel = self.MIN_CHANNEL
+            else:
+                self.__channel += 1
 
     def channel_down(self):
-        pass
-
+        if self.__status:
+            if self.__channel == self.MIN_CHANNEL:
+                self.__channel = self.MAX_CHANNEL
+            else:
+                self.__channel -= 1
     def volume_up(self):
         if self.__status:
             if self.__muted:
@@ -40,8 +45,6 @@ class Television:
                 pass #cant change vol
             else: 
                 self.__volume += 1
-        else:
-            pass #tv off
 
     def volume_down(self):
         if self.__status:
@@ -51,8 +54,6 @@ class Television:
                 pass #cant change vol
             else: 
                 self.__volume -= 1
-        else:
-            pass #tv off
 
     def __str__(self):
         if self.__muted:
