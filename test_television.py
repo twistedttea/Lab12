@@ -6,6 +6,7 @@ class Test:
         self.tv1 = Television()
 
     def test_construction(self):
-        assert self.tv0.__str__() == 'Power - False, Channel - 0, Volume - 0'
-        assert self.tv1.__str__() == 'Power - False, Channel - 0, Volume - 0'
+        assert self.tv0.__str__() == 'Power = False, Channel = 0, Volume = 0'
+        assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
+    def test
 
