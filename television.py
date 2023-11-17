@@ -9,20 +9,20 @@ class Television:
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
     
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initializes 4 attributes
-        :param status: power state
-        :param muted: mute state
-        :param volume: volume value
-        :param channel: channel value
+        :param status: power False
+        :param muted: mute False
+        :param volume: volume 0
+        :param channel: channel 0
         """
-        self.__status = False
-        self.__muted = False 
-        self.__volume = self.MIN_VOLUME
-        self.__channel = self.MIN_CHANNEL
+        self.__status: bool = False
+        self.__muted: bool = False 
+        self.__volume: int = self.MIN_VOLUME
+        self.__channel: int = self.MIN_CHANNEL
     
-    def power(self):
+    def power(self) -> None:
         """
         flips status state
         None
@@ -32,7 +32,7 @@ class Television:
         else:
             self.__status = True
 
-    def mute(self):
+    def mute(self) -> None:
         """
         flips mute state if status True
         None
@@ -43,7 +43,7 @@ class Television:
             else:
                 self.__muted = True
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         """
         Increases channel value by +1
         if channel is at max value -> min value
@@ -54,7 +54,7 @@ class Television:
             else:
                 self.__channel += 1
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         """
         Decreases channel value by -1
         if channel is at min value -> max value
@@ -66,7 +66,7 @@ class Television:
             else:
                 self.__channel -= 1
     
-    def volume_up(self):
+    def volume_up(self) -> None:
         """
         Increases volume value by +1
         if volume is at max -> no change
@@ -81,7 +81,7 @@ class Television:
 
             
 
-    def volume_down(self):
+    def volume_down(self) -> None:
         """
         Decreases volume by -1
         if volume is at min -> no change
@@ -95,7 +95,7 @@ class Television:
             else:
                 self.__volume -= 1         
     
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Returns the current values of the attributes
         if muted == true -> display volume as zero
