@@ -75,9 +75,11 @@ class Television:
             if self.__muted:
                 self.__muted = False
             if self.MAX_VOLUME == self.__volume:
-                pass #cant change vol
-            else: 
+                pass
+            else:
                 self.__volume += 1
+
+            
 
     def volume_down(self):
         """
@@ -89,10 +91,10 @@ class Television:
             if self.__muted:
                 self.__muted = False
             if self.MIN_VOLUME == self.__volume:
-                pass #cant change vol
-            else: 
-                self.__volume -= 1
-
+                pass
+            else:
+                self.__volume -= 1         
+    
     def __str__(self):
         """
         Returns the current values of the attributes
