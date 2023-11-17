@@ -2,6 +2,11 @@
 class Television:
     """
     This class is represents a TV remote
+    Has 4 attr. initialized as
+        :param status: power False
+        :param muted: mute False
+        :param volume: volume 0
+        :param channel: channel 0
     """
 
     MIN_VOLUME = 0
